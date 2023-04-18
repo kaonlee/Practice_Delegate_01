@@ -4,7 +4,7 @@
 	{
 		static void Main( string [] args )
 		{
-			int height = 5;
+			int height = 7;
 			//DrawLeftRightTriangle
 			Console.WriteLine( "DrawLeftRightTriangle" );
 			Triangle.Draw( height, stars => new string( '*', stars ));
@@ -13,7 +13,7 @@
 			Triangle.Draw( height, stars => new string( '*', stars ).PadRight(height) );
 			//DrawIsoscelesTriangle
 			Console.WriteLine( "DrawIsoscelesTriangle" );
-			Triangle.Draw( height, stars => new string( ' ', 5 - stars ) + new string( '*', stars * 2 - 1 ) );
+			Triangle.Draw( height, stars => new string( ' ', height - stars ) + new string( '*', stars * 2 - 1 ) );
 		}
 	}
 
