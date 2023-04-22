@@ -17,13 +17,13 @@
 			
 			
 			//DrawUSD LeftRightTriangle
-			Console.WriteLine("DrawLeftRightTriangle");
+			Console.WriteLine("Draw *UpSideDown* LeftRightTriangle");   
 			Triangle.DrawUSD(height, stars => new string('*', stars));
 			//DrawUSD RightTriangle
-			Console.WriteLine("DrawRightTriangle");
+			Console.WriteLine("Draw *UpSideDown* RightTriangle");
 			Triangle.DrawUSD(height, stars => new string('*', stars).PadLeft(height));
 			//DrawUSD IsoscelesTriangle
-			Console.WriteLine("DrawIsoscelesTriangle");
+			Console.WriteLine("Draw *UpSideDown* IsoscelesTriangle");
 			Triangle.DrawUSD(height, stars => new string(' ', height - stars) + new string('*', stars * 2 - 1));
 
 		}
