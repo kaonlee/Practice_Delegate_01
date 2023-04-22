@@ -10,10 +10,22 @@
 			Triangle.Draw( height, stars => new string( '*', stars ));
 			//DrawRightTriangle
 			Console.WriteLine( "DrawRightTriangle" );
-			Triangle.Draw( height, stars => new string( '*', stars ).PadRight(height) );
+			Triangle.Draw( height, stars => new string( '*', stars ).PadLeft(height) );
 			//DrawIsoscelesTriangle
 			Console.WriteLine( "DrawIsoscelesTriangle" );
 			Triangle.Draw( height, stars => new string( ' ', height - stars ) + new string( '*', stars * 2 - 1 ) );
+			
+			
+			//DrawUSD LeftRightTriangle
+			Console.WriteLine("DrawLeftRightTriangle");
+			Triangle.DrawUSD(height, stars => new string('*', stars));
+			//DrawUSD RightTriangle
+			Console.WriteLine("DrawRightTriangle");
+			Triangle.DrawUSD(height, stars => new string('*', stars).PadLeft(height));
+			//DrawUSD IsoscelesTriangle
+			Console.WriteLine("DrawIsoscelesTriangle");
+			Triangle.DrawUSD(height, stars => new string(' ', height - stars) + new string('*', stars * 2 - 1));
+
 		}
 	}
 
@@ -26,6 +38,13 @@
 				Console.WriteLine( func( rowIndex ) );
 			}
 		}
+		public static void DrawUSD (int height, Func<int, string> func)
+		{
+			for (int rowIndex = height; rowIndex>0; rowIndex-- )
+			{
+				Console.WriteLine(func(rowIndex ) );
+			}
+}
 	}
 }
 
